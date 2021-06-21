@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<style>
+		body{font-family: arial;padding:40px; margin:0; background: #19a2c9; color:#fff; }
+		.panel{float:left; width: 33%; display: inline-block;min-height: 1px}
+		.panel p {background: #1482a1; margin:20px;padding:20px;}
+		a{color:#fff210; text-decoration: none; display: inline-block; width:33%;text-align: center}
+		hr{ border: 0; height: 1px; background: #ccc; margin-bottom: 40px; }
+	</style>
+
+</head>
+<body>
+	<h1>JQuery</h1>
+	<h2>Introduzione a jquery</h2>
+	<hr/>
+	<p> <a href="#" id="trigger1">Trigger 1</a>  <a href="#" id="trigger2">Trigger 2</a>  <a href="#" id="trigger3">Trigger 3</a><p>
+	<div class="panel" id="info1"><p>Info 1</p></div>
+	<div class="panel" id="info2"><p>Info 2</p></div>
+	<div class="panel" id="info3"><p>Info 3</p></div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+            $("#trigger1").on('click',function(){
+                $("#info1 p").slideToggle();
+            });
+		});
+
+	</script>
+
+</body>
+
+</html>

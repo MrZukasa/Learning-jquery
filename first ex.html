@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <style>
+            h2{ color: black;}
+
+            body{font-family: arial;padding:40px; margin:0; background: #8fd0e5; color:#fff; }
+    
+            .panel{float:left; width: 33%}
+    
+            .panel p {background: #1482a1; margin:20px;padding:20px;}
+    
+            a{color:#071e41; text-decoration: none; display: inline-block; width:33%;text-align: center}
+    
+            hr{ border: 0; height: 1px; background: rgb(184, 17, 17); margin-bottom: 40px; }
+    
+        </style> 
+    </head>
+    <body>        
+        <h2>Test</h2>
+        <hr/>
+        <p> <a href="#" id="trigger1">Trigger 1</a>  <a href="#" id="trigger2">Trigger 2</a>  <a href="#" id="trigger3">Trigger 3</a><p>
+            <div class="panel" id="info1"><p>Info 1</p></div>      
+            <div class="panel" id="info2"><p>Info 2</p></div>        
+            <div class="panel" id="info3"><p>Info 3</p></div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>        
+        <script>
+
+            $(document).ready(function(){
+        
+                $("#info1").hide(600).delay(300).show(300);
+                $("#info2").css({'background':'red'});
+                $("#info3").html('Test');
+        
+            });
+        
+        </script>
+    </body>    
+</html>
