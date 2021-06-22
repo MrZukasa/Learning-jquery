@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<style>
+		body{font-family: arial;padding:40px; margin:0; background: #9bb4d457; color:rgb(88, 85, 85); }
+		a{color:#fff210; text-decoration: none; display: inline-block; width:33%;text-align: center}
+		hr{ border: 0; height: 1px; background: #ccc; margin-bottom: 40px; }
+		.lined{text-decoration: line-through}
+	</style>
+</head>
+
+<body>
+	<h1>JQuery</h1>
+	<h2>Introduzione a jquery</h2>
+	<ul class="lista">
+		<li class="lined">Pasta</li>
+		<li>Pane</li>
+		<li> Bevande
+			<ul class="sotto-lista">
+				<li>Acqua</li>
+				<li>Vino</li>
+				<li>Coca Cola</li>
+			</ul>
+		</li>
+		<li>Uova</li>
+		<li>Pomodoro</li>
+		<li>Insalata</li>
+	</ul>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+            //selettori semplici
+            $("li").css({'color':'blue'});                  //tutti i componenti della lista
+            $("li").first().css({'color':'red'});           //solo il primo componente della lista
+            $("li").last().css({'color':'green'});          //solo l'ultimo elemento della lista
+            $("li").eq(7).css({'color':'purple'});          //solo l'ottavo elemento della lista
+            $(".sotto-lista li").css({'color':'grey'});     //solo gli elementi "li" della sotto-lista
+            //selettori complessi
+            $("li").eq(4).parent().parent().css({'color':'orange'});      //da vino quattro indietro 
+            $("li").eq(4).parent().parent().prev().css({'color':'yellow'});       //da vino cinque indietro
+            //selettori ad eventi
+            /*$(".lista").on('click',function(){
+                $(this).find("ul li").first().css({'color':'brown'});
+                $(this).find(".lined").remove();
+            });*/
+            //selettori con if 
+
+            //questo è fico
+
+            $("li").on('click',function(){
+                if($(this).has('ul').length==0){
+                    $(this).addClass('lined');
+                }
+                if($(this).parent().is('.sotto-lista')){
+                    $(this).remove();
+                }
+            });
+
+            // fine roba interessante
+		});
+	</script>
+</body>
+</html>

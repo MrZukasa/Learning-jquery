@@ -20,16 +20,23 @@
 	<div class="panel" id="info1"><p>Info 1</p></div>
 	<div class="panel" id="info2"><p>Info 2</p></div>
 	<div class="panel" id="info3"><p>Info 3</p></div>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<script>
 		$(document).ready(function(){
             $("#trigger1").on('click',function(){
                 $("#info1 p").slideToggle();
+
             });
+			$("#trigger2").on('mouseover',function(){
+				$("#info2 p").fadeToggle();
+			});
+			$("#trigger3").on('click',function(){
+				$("#info3 p").fadeOut();
+			});
+			$("#trigger3").on('mouseover',function(){
+				$("#info3 p").slideDown();
+			});
 		});
-
 	</script>
-
 </body>
-
 </html>
