@@ -37,8 +37,15 @@
     <script>
         $(document).ready(function(){
             $(".tab-menu li").on('click',function(){
-                var panel = $(this).attr("data-panel");
-                alert(panel);
+                var panel = $(this).attr("data-panel");         //questo this è relativo al .tab-menu li
+                $(".panel.active").slideUp(600,showPanel);
+                function showPanel(){                           //apro la funzione richiamata sopra in callback
+                    $(this).removeClass('active');              //questo this è relativo al .panel.active
+                    $("#"+panel).slideDown(600, function(){     
+                        $(this).addClass('active');             // questo this è riferito al pannello 
+                    });
+                    
+                };
             });
         });
     </script>
